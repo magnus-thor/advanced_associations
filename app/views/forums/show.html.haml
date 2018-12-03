@@ -4,4 +4,6 @@
     %p.box= post.body
     %span= post.user.email
     - if user_signed_in?
-      = link_to "Like", forum_path(post_id: post.id), method: :put
+      = link_to_unless post.liked?(current_user), "Like", forum_path(post_id: post.id), method: :put
+    %span count: 
+    %span= post.likes.count

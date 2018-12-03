@@ -1,6 +1,8 @@
 FactoryBot.define do
   factory :post do
-    body { "MyText" }
-    forum { nil }
+    title { 'Title' }
+    body { 'MyText' }
+    forum
+    user
   end
 end
