@@ -1,4 +1,3 @@
-<h1>Forums</h1>
+%h1 Forums
 - @forums.each do |forum|
-  = link_to forum.name, forums_path(forum)
-  
+  = link_to forum.name.capitalize, forum_path(forum)
