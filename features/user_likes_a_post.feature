@@ -2,9 +2,9 @@ Feature: user likes a post
 
   Background:
     Given these following users exists
-      | email            |
-      | oliver@craft.com |
-      | magnus@craft.com |
+      | email            | password |
+      | oliver@craft.com | password |
+      | magnus@craft.com | password |
     Given these following posts exists
       | body        | forum  | user             | likes |
       | Lorem ipsum | sports | oliver@craft.com | 2     |

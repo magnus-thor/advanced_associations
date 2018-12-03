@@ -12,18 +12,19 @@ Given("these following posts exists") do |table|
   end
 end
 
-Given("I am logged in as {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I am logged in as {string}") do |email|
+  user = User.find_by(email: email)
+  login_as user
 end
 
 Given("I visit the site") do
-  pending # Write code here that turns the phrase above into concrete actions
+  visit root_path
 end
 
-Given("I click on {string}") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Given("I click on {string}") do |button_or_link|
+  click_on button_or_link
 end
 
-When("I click like on {string} post") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When("I click like on {string} post") do |user|
+  binding.pry
 end
