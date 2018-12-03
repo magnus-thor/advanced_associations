@@ -1,5 +1,7 @@
 %h1= @forum.name
 - @forum.posts.each do |post|
-  %p.box= post.body
-  %p= post.user.email
-  = link_to "Like", 
+  %div{id: dom_id(post)}
+    %p.box= post.body
+    %span= post.user.email
+    - if user_signed_in?
+      = link_to "Like", forum_path(post_id: post.id), method: :put

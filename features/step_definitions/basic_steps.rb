@@ -13,8 +13,8 @@ Given("these following posts exists") do |table|
 end
 
 Given("I am logged in as {string}") do |email|
-  user = User.find_by(email: email)
-  login_as user
+  @user = User.find_by(email: email)
+  login_as @user
 end
 
 Given("I visit the site") do
@@ -25,6 +25,10 @@ Given("I click on {string}") do |button_or_link|
   click_on button_or_link
 end
 
-When("I click like on {string} post") do |user|
-  binding.pry
+When("I click like on {string} post") do |email|
+  user = User.find_by(email: email)
+  dom_section = "#post_#{user.posts.first.id}"
+  within dom_section do
+    click_on 'Like'
+  end
 end
