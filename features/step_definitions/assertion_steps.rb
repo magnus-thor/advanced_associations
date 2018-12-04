@@ -14,3 +14,7 @@ Then("I should not be able to click on like again on post {string}") do | title 
     expect(page).not_to have_button 'Like'
   end
 end
+
+Then("I should see {string}") do |content|
+  expect(page).to have_content content
+end
