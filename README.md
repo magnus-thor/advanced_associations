@@ -1,6 +1,6 @@
-# Craft Academy Rails 5.2 Boilerplate
+# Craft Academy Rails 5.2 advanced_association
 
-In order to get you started with Rails, we've set up a boilerplate application using the following setup:
+In order to get you started with Rails, we've set up a advanced_association application using the following setup:
 * Rails 5.2
 * Cucumber - acceptance testing framework
 * RSpec - testing framework that we will be using for unit testing
@@ -11,7 +11,7 @@ In order to get you started with Rails, we've set up a boilerplate application u
 
 1. Copy the url an clone the repository to you `localhost`
 
-2. Open the `config/application.rb` and chage the application name from `Boilerplate` to whatever you want to call your application (i.e. `SlowFoodOnline`) 
+2. Open the `config/application.rb` and chage the application name from `advanced_association` to whatever you want to call your application (i.e. `SlowFoodOnline`) 
 
   
   ```ruby
@@ -21,7 +21,7 @@ In order to get you started with Rails, we've set up a boilerplate application u
   end
   ```
  
-3. Open the `config/database.yml` and change the database name from `boilerplate_test`, `boilerplate_development`, etc, to for example `slow_food_test`, `slow_food_development` and `slowfood_production`. Also, if you see a `username` set to `boilerplate` change that to `slow_food` as well (Again, if you use a different name for your app, make sure you follow the naming standard outlined in the examples above).
+3. Open the `config/database.yml` and change the database name from `advanced_association_test`, `advanced_association_development`, etc, to for example `slow_food_test`, `slow_food_development` and `slowfood_production`. Also, if you see a `username` set to `advanced_association` change that to `slow_food` as well (Again, if you use a different name for your app, make sure you follow the naming standard outlined in the examples above).
 
 4. In your terminal, inside the project folder, run the following command to **remove** the Git original repository: 
 

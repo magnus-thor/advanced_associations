@@ -1,0 +1,9 @@
+%h1= @forum.name
+- @forum.posts.each do |post|
+  %div{id: dom_id(post)}
+    %p.box= post.body
+    %span= post.user.email
+    - if user_signed_in?
+      = link_to_unless post.liked?(current_user), "Like", forum_path(post_id: post.id), method: :put
+    %span count: 
+    %span= post.likes.count
