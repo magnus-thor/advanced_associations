@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_123241) do
+ActiveRecord::Schema.define(version: 2019_01_28_154007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 2018_12_04_123241) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
+  end
+
+  create_table "forums_users", id: false, force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "forum_id", null: false
+    t.index ["forum_id", "user_id"], name: "index_forums_users_on_forum_id_and_user_id"
+    t.index ["user_id", "forum_id"], name: "index_forums_users_on_user_id_and_forum_id"
   end
 
   create_table "likes", force: :cascade do |t|
@@ -49,6 +57,8 @@ ActiveRecord::Schema.define(version: 2018_12_04_123241) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
+    t.integer "type", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
